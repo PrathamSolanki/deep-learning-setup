@@ -6,8 +6,8 @@
 * Graphics Card: NVIDIA GeForce GTX 1050 Ti
 
 ### Table of Contents
-* [Basic OS updates](#Basic OS updates)
-* [Nvidia Drivers](#Nvidia Drivers)
+* [Basic OS updates](#basic-os-updates)
+* [Nvidia Drivers](#nvidia-drivers)
 
 ### Basic OS updates
 * Run the following commands to make your OS up-to-date:
