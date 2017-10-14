@@ -25,8 +25,7 @@
 
         sudo add-apt-repository ppa:graphics-drivers/ppa
         sudo apt-get update
-* Blacklist Nouveau kernel driver
-Open `/etc/modprobe.d/blacklist.conf` and add the following:
+* Blacklist Nouveau kernel driver. Open `/etc/modprobe.d/blacklist.conf` and add the following:
 
         blacklist amd76x_edac
         blacklist vga16fb
