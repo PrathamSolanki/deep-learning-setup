@@ -7,8 +7,8 @@
 ### Table of Contents
 * [Basic OS updates](#basic-os-updates)
 * [NVIDIA Drivers](#nvidia-drivers)
-* [CUDA Toolkit](cuda-toolkit)
-* [cuDNN](cudnn)
+* [CUDA Toolkit](#cuda-toolkit)
+* [cuDNN](#cudnn)
 
 ### Basic OS updates
 * Making OS up-to-date:
@@ -52,7 +52,7 @@
         sudo dpkg -i cuda-repo-ubuntu1604_9.0.176-1_amd64.deb
         sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub
         sudo apt-get update
-        sudo apt-get install cuda
+        sudo apt-get install cuda-8-0
 * Add CUDA to the environment variables
 
         echo 'export CUDA_HOME=/usr/local/cuda' >> ~/.bashrc
@@ -84,7 +84,7 @@
 * To download the cuDNN library, register/login at [NVIDIA cuDNN](https://developer.nvidia.com/cudnn)
 * Download 'cuDNN v7.0 Library for Linux'. Here are the instructions for installing from a tar file:
 
-        tar -xzvf cudnn-9.0-linux-x64-v7.tgz
+        tar -xzvf cudnn-8.0-linux-x64-v6.0.tgz
         sudo cp cuda/include/cudnn.h /usr/local/cuda/include
         sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
         sudo chmod a+r /usr/local/cuda/include/cudnn.h
