@@ -2,12 +2,11 @@
 
 ### My system specifications
 * Operating System: Elementary OS Loki 0.4.1
-* CPU: 
 * Graphics Card: NVIDIA GeForce GTX 1050 Ti
 
 ### Table of Contents
 * [Basic OS updates](#basic-os-updates)
-* [Nvidia Drivers](#nvidia-drivers)
+* [NVIDIA Drivers](#nvidia-drivers)
 * [CUDA Toolkit](cuda-toolkit)
 * [cuDNN](cudnn)
 
