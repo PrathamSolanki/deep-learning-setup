@@ -9,6 +9,7 @@
 * [Basic OS updates](#basic-os-updates)
 * [Nvidia Drivers](#nvidia-drivers)
 * [CUDA Toolkit](cuda-toolkit)
+* [cuDNN](cudnn)
 
 ### Basic OS updates
 * Making OS up-to-date:
@@ -73,9 +74,22 @@ Open `/etc/modprobe.d/blacklist.conf` and add the following:
         cd ~/cuda-samples/NVIDIA*Samples
         make -j $(($(nproc) + 1))
 
-**Note:** `-j $(($(nproc) + 1))` executes the make command in parallel using the number of cores in your machine, so the compilation is faster.
+**Note:** `-j $(($(nproc) + 1))` executes the make command in parallel using the number of cores in the machine, so the compilation is faster.
 
 * Run deviceQuery and ensure that it detects the graphics card and the tests pass
 
         bin/x86_64/linux/release/deviceQuery
 * Remove 'cuda-samples' by `rm -r ~/cuda-samples`
+
+### cuDNN
+* cuDNN is a GPU accelerated library for DNNs. It can help speed up execution in many cases.
+* To download the cuDNN library, register/login at [NVIDIA cuDNN](https://developer.nvidia.com/cudnn)
+* Download 'cuDNN v7.0 Library for Linux'. Here are the instructions for installing from a tar file:
+
+        tar -xzvf cudnn-9.0-linux-x64-v7.tgz
+        sudo cp cuda/include/cudnn.h /usr/local/cuda/include
+        sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
+        sudo chmod a+r /usr/local/cuda/include/cudnn.h
+* Verify cuDNN
+
+        cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
