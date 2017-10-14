@@ -73,7 +73,7 @@ Open `/etc/modprobe.d/blacklist.conf` and add the following:
         cd ~/cuda-samples/NVIDIA*Samples
         make -j $(($(nproc) + 1))
 
-**Note: **`-j $(($(nproc) + 1))` executes the make command in parallel using the number of cores in your machine, so the compilation is faster.
+**Note:** `-j $(($(nproc) + 1))` executes the make command in parallel using the number of cores in your machine, so the compilation is faster.
 
 * Run deviceQuery and ensure that it detects the graphics card and the tests pass
 
