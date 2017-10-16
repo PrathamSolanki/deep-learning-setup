@@ -69,7 +69,7 @@
         sudo shutdown -r now
 * Verifying CUDA Toolkit functioning
 
-        /usr/local/cuda/bin/cuda-install-samples-9.0.sh ~/cuda-samples
+        /usr/local/cuda/bin/cuda-install-samples-8.0.sh ~/cuda-samples
         cd ~/cuda-samples/NVIDIA*Samples
         make -j $(($(nproc) + 1))
 
@@ -83,7 +83,7 @@
 ### cuDNN
 * cuDNN is a GPU accelerated library for DNNs. It can help speed up execution in many cases.
 * To download the cuDNN library, register/login at [NVIDIA cuDNN](https://developer.nvidia.com/cudnn)
-* Download 'cuDNN v7.0 Library for Linux'. Here are the instructions for installing from a tar file:
+* Download 'cuDNN v6.0 Library for Linux'. Here are the instructions for installing from a tar file:
 
         tar -xzvf cudnn-8.0-linux-x64-v6.0.tgz
         sudo cp cuda/include/cudnn.h /usr/local/cuda/include
