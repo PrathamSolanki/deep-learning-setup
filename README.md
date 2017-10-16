@@ -9,6 +9,7 @@
 * [NVIDIA Drivers](#nvidia-drivers)
 * [CUDA Toolkit](#cuda-toolkit)
 * [cuDNN](#cudnn)
+* [Tensorflow](#tensorflow)
 
 ### Basic OS updates
 * Making OS up-to-date:
@@ -91,3 +92,44 @@
 * Verify cuDNN
 
         cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
+
+### Tensorflow
+* NVIDIA requirements to run TensorFlow with GPU support:
+    * CUDA® Toolkit 8.0. Ensure that you append the relevant Cuda pathnames to the `LD_LIBRARY_PATH` environment variable as described in the NVIDIA documentation.
+    * The NVIDIA drivers associated with CUDA Toolkit 8.0.
+    * cuDNN v6. Ensure that you create the `CUDA_HOME` environment variable as described in the NVIDIA documentation.
+    * GPU card with CUDA Compute Capability 3.0 or higher. See [NVIDIA documentation](https://developer.nvidia.com/cuda-gpus) for a list of supported GPU cards.
+    * The `libcupti-dev` library, which is the NVIDIA CUDA Profile Tools Interface. This library provides advanced profiling support. To install this library, issue the following command:
+
+            sudo apt-get install libcupti-dev
+* Installing with virtualenv
+    * Install pip and virtualenv by issuing one of the following commands:
+
+            sudo apt-get install python3-pip python3-dev python-virtualenv # for Python 3.n
+    * Create a virtualenv environment by issuing one of the following commands:
+
+            mkdir ~/tensorflow
+            virtualenv --system-site-packages -p python3 ~/tensorflow # for Python 3.n
+     * Activate the virtualenv environment by issuing one of the following commands:
+
+            source ~/tensorflow/bin/activate # bash, sh, ksh, or zsh
+          The preceding source command should change your prompt to the following:
+
+            (tensorflow)$
+    * Ensure pip ≥8.1 is installed:
+
+            (tensorflow)$ easy_install -U pip
+    * Issue one of the following commands to install TensorFlow in the active virtualenv environment:
+
+            (tensorflow)$ pip3 install --upgrade tensorflow-gpu # for Python 3.n and GPU
+* Validate installation:
+    * Invoke python from your shell and Enter the following short program inside the python interactive shell:
+
+            # Python
+            import tensorflow as tf
+            hello = tf.constant('Hello, TensorFlow!')
+            sess = tf.Session()
+            print(sess.run(hello))
+        If the system outputs the following, then you are ready to begin writing TensorFlow programs:
+
+            Hello, TensorFlow!
