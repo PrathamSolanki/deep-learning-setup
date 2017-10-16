@@ -103,14 +103,14 @@
 
             sudo apt-get install libcupti-dev
 * Installing with virtualenv
-    * Install pip and virtualenv by issuing one of the following commands:
+    * Install pip and virtualenv by issuing the following command:
 
             sudo apt-get install python3-pip python3-dev python-virtualenv # for Python 3.n
-    * Create a virtualenv environment by issuing one of the following commands:
+    * Create a virtualenv environment by issuing the following command:
 
             mkdir ~/tensorflow
             virtualenv --system-site-packages -p python3 ~/tensorflow # for Python 3.n
-     * Activate the virtualenv environment by issuing one of the following commands:
+     * Activate the virtualenv environment by issuing the following command:
 
             source ~/tensorflow/bin/activate # bash, sh, ksh, or zsh
           The preceding source command should change your prompt to the following:
@@ -119,7 +119,7 @@
     * Ensure pip ≥8.1 is installed:
 
             (tensorflow)$ easy_install -U pip
-    * Issue one of the following commands to install TensorFlow in the active virtualenv environment:
+    * Issue the following command to install TensorFlow in the active virtualenv environment:
 
             (tensorflow)$ pip3 install --upgrade tensorflow-gpu # for Python 3.n and GPU
 * Validate installation:
